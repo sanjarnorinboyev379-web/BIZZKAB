@@ -1,31 +1,52 @@
 let count = 0;
 let total = 0;
+let list = [];
 
 function add(btn) {
-    let card = btn.parentElement;
-    let name = card.dataset.name;
-    let price = Number(card.dataset.price);
+  const card = btn.parentElement;
+  const name = card.dataset.name;
+  const price = Number(card.dataset.price);
 
-    count++;
-    total += price;
+  count++;
+  total += price;
 
-    document.getElementById("count").innerText = count;
-    document.getElementById("total").innerText = total;
+  list.push(name + " - " + price + " so'm");
 
-    let li = document.createElement("li");
-    li.innerText = name + " - " + price + " so'm";
+  document.getElementById("count").innerText = count;
+  document.getElementById("total").innerText = total;
 
-    document.getElementById("items").appendChild(li);
+  render();
 }
 
-const search = document.getElementById("search");
+function render() {
+  const ul = document.getElementById("items");
+  ul.innerHTML = "";
+  list.forEach(item => {
+    const li = document.createElement("li");
+    li.innerText = item;
+    ul.appendChild(li);
+  });
+}
 
-search.addEventListener("keyup", function () {
-    let value = search.value.toLowerCase();
-    document.querySelectorAll(".card").forEach(card => {
-        card.style.display =
-            card.innerText.toLowerCase().includes(value)
-                ? "block"
-                : "none";
-    });
+function order() {
+  if (list.length === 0) {
+    alert("Savatcha bo‘sh!");
+    return;
+  }
+
+  let text = "🧾 BIZZKAB BUYURTMA\n\n";
+  list.forEach(i => text += "• " + i + "\n");
+  text += "\nJami: " + total + " so'm";
+
+  window.open(
+    "https://t.me/share/url?text=" + encodeURIComponent(text)
+  );
+}
+
+document.getElementById("search").addEventListener("keyup", e => {
+  let v = e.target.value.toLowerCase();
+  document.querySelectorAll(".card").forEach(c => {
+    c.style.display = c.innerText.toLowerCase().includes(v)
+      ? "block" : "none";
+  });
 });
