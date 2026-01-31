@@ -1,31 +1,51 @@
-let count = 0;
-let total = 0;
-
-function add(btn) {
-    let card = btn.parentElement;
-    let name = card.dataset.name;
-    let price = Number(card.dataset.price);
-
-    count++;
-    total += price;
-
-    document.getElementById("count").innerText = count;
-    document.getElementById("total").innerText = total;
-
-    let li = document.createElement("li");
-    li.innerText = name + " - " + price + " so'm";
-
-    document.getElementById("items").appendChild(li);
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #b30000;
+  color: yellow;
 }
 
-const search = document.getElementById("search");
+header {
+  text-align: center;
+  padding: 15px;
+}
 
-search.addEventListener("keyup", function () {
-    let value = search.value.toLowerCase();
-    document.querySelectorAll(".card").forEach(card => {
-        card.style.display =
-            card.innerText.toLowerCase().includes(value)
-                ? "block"
-                : "none";
-    });
-});
+input {
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.menu {
+  padding: 10px;
+}
+
+.card {
+  background: #8b0000;
+  margin: 12px;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+button {
+  background: yellow;
+  color: #b30000;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  width: 100%;
+}
+
+.basket {
+  background: #600000;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.order {
+  margin-top: 10px;
+  font-size: 18px;
+}
