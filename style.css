@@ -1,15 +1,12 @@
-function add(item) {
-    alert(item + " savatchaga qo‘shildi ✅");
+let count = 0;
+let total = 0;
+
+function addToCart(name, price) {
+  count++;
+  total += price;
+
+  document.getElementById("count").innerText = count;
+  document.getElementById("total").innerText = total;
+
+  alert(name + " savatga qo‘shildi ✅");
 }
-
-const search = document.getElementById("search");
-
-search.addEventListener("keyup", function () {
-    let value = search.value.toLowerCase();
-    let cards = document.querySelectorAll(".card");
-
-    cards.forEach(card => {
-        let text = card.innerText.toLowerCase();
-        card.style.display = text.includes(value) ? "block" : "none";
-    });
-});
