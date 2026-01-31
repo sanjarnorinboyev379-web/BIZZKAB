@@ -1,62 +1,68 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #b30000;
-  color: #ffd700;
+  background: red;
+  color: yellow;
 }
 
-header {
+.header {
   text-align: center;
-  padding: 15px;
-  border-bottom: 2px solid #ffd700;
+  padding: 25px;
+  border-bottom: 4px solid yellow;
 }
 
-.tabs {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
+.header h1 {
+  font-size: 42px;
+  margin: 0;
 }
 
-.tabs button {
-  background: #ffd700;
-  color: #b30000;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 8px;
-  font-weight: bold;
+.header p {
+  font-size: 22px;
+}
+
+.category {
+  text-align: center;
+  font-size: 32px;
+  margin: 20px 0;
 }
 
 .menu {
-  padding: 15px;
+  padding: 20px;
 }
 
 .item {
-  background: #8b0000;
-  border-radius: 12px;
-  padding: 12px;
-  margin-bottom: 12px;
+  background: darkred;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .item h3 {
+  font-size: 26px;
   margin: 0;
 }
 
+.item p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
 .item span {
+  font-size: 22px;
   font-weight: bold;
 }
 
-.item button {
-  background: #ffd700;
-  color: #b30000;
+.plus {
+  width: 60px;
+  height: 60px;
+  font-size: 36px;
+  background: yellow;
+  color: red;
   border: none;
-  width: 40px;
-  height: 40px;
   border-radius: 50%;
-  font-size: 22px;
   cursor: pointer;
 }
 
@@ -64,9 +70,10 @@ header {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: #ffd700;
-  color: #b30000;
-  padding: 12px;
+  background: yellow;
+  color: red;
   text-align: center;
+  padding: 18px;
+  font-size: 22px;
   font-weight: bold;
 }
