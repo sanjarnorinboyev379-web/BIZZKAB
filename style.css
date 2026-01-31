@@ -1,49 +1,3 @@
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #b30000;
-  color: yellow;
-}
-
-header {
-  text-align: center;
-  padding: 15px;
-}
-
-input {
-  width: 90%;
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-}
-
-.menu {
-  padding: 10px;
-}
-
-.card {
-  background: #8b0000;
-  margin: 12px;
-  padding: 15px;
-  border-radius: 15px;
-}
-
-button {
-  background: yellow;
-  color: #b30000;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  font-weight: bold;
-  width: 100%;
-}
-
-.basket {
-  background: #600000;
-  margin: 15px;
-  padding: 15px;
-  border-radius: 15px;
-} 
 .form {
   background: #700000;
   margin: 15px;
@@ -57,9 +11,4 @@ textarea, input {
   margin-top: 10px;
   border-radius: 10px;
   border: none;
-}
-
-.order {
-  margin-top: 10px;
-  font-size: 18px;
 }
