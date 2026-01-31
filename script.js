@@ -1,61 +1,53 @@
-let list = [];
-let total = 0;
-let orderId = Math.floor(1000 + Math.random() * 9000);
-
-function add(btn) {
-  const card = btn.parentElement;
-  const name = card.dataset.name;
-  const price = Number(card.dataset.price);
-
-  list.push(name + " — " + price + " so'm");
-  total += price;
-
-  document.getElementById("total").innerText = total;
-  render();
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #b30000;
+    color: yellow;
 }
 
-function render() {
-  const ul = document.getElementById("items");
-  ul.innerHTML = "";
-  list.forEach(i => {
-    let li = document.createElement("li");
-    li.innerText = i;
-    ul.appendChild(li);
-  });
+header {
+    padding: 20px;
+    text-align: center;
 }
 
-function showForm() {
-  if (list.length === 0) {
-    alert("Savatcha bo‘sh!");
-    return;
-  }
-  document.getElementById("form").style.display = "block";
+header h1 {
+    margin-bottom: 10px;
+    font-size: 40px;
 }
 
-function sendOrder() {
-  const phone = document.getElementById("phone").value;
-  const address = document.getElementById("address").value;
+#search {
+    padding: 10px;
+    width: 90%;
+    border-radius: 10px;
+    border: none;
+}
 
-  if (!phone || !address) {
-    alert("Telefon va manzilni to‘liq kiriting!");
-    return;
-  }
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    padding: 15px;
+}
 
-  let text =
-📦 BUYURTMA #${orderId}
+.card {
+    background: #8b0000;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+}
 
-📞 Tel: ${phone}
-📍 Manzil:
-${address}
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
 
-🍔 Buyurtma:
-${list.join("\n")}
-
-💰 Jami: ${total} so'm
-;
-
-  window.open(
-    "https://t.me/share/url?text=" +
-    encodeURIComponent(text)
-  );
+.card button {
+    margin-top: 10px;
+    padding: 8px;
+    width: 100%;
+    background: yellow;
+    color: #b30000;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
 }
