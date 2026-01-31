@@ -2,53 +2,71 @@
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
-<title>BIZZKAB | Menu</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIZZKAB MENU</title>
 
 <style>
 body{
     margin:0;
     font-family:Arial, sans-serif;
-    background:#f5f5f5;
+    background:#b30000;
+    color:#ffd700;
 }
+
 .container{
-    max-width:420px;
+    max-width:500px;
     margin:auto;
-    background:#fff;
-    padding:20px;
+    padding:15px;
 }
-.title{
+
+h1{
     text-align:center;
-    font-size:36px;
-    font-weight:bold;
-    color:#8b4a2f;
+    color:#ffd700;
+    margin-bottom:20px;
 }
+
 .section{
-    margin-top:25px;
+    background:#8b0000;
+    border-radius:12px;
+    padding:12px;
+    margin-bottom:18px;
 }
-.section h3{
-    background:#8b4a2f;
-    color:white;
+
+.section h2{
+    background:#ffd700;
+    color:#b30000;
     padding:8px;
-    border-radius:6px;
-    font-size:18px;
+    border-radius:8px;
+    font-size:20px;
 }
+
 .item{
     display:flex;
     justify-content:space-between;
     padding:6px 0;
-    border-bottom:1px dashed #ccc;
-    font-size:15px;
+    border-bottom:1px dashed #ffd700;
 }
-.footer{
-    margin-top:30px;
+
+.order-btn{
+    display:block;
     text-align:center;
-    font-size:14px;
-    color:#333;
-}
-.phone{
+    background:linear-gradient(45deg,#ffd700,#ff9900);
+    color:#b30000;
+    font-size:22px;
     font-weight:bold;
-    margin-top:5px;
+    padding:18px;
+    border-radius:50px;
+    text-decoration:none;
+    margin:25px 0;
+}
+
+.order-btn:hover{
+    opacity:0.9;
+}
+
+.footer{
+    text-align:center;
+    font-size:15px;
 }
 </style>
 </head>
@@ -57,33 +75,40 @@ body{
 
 <div class="container">
 
-<div class="title">BIZZ KAB</div>
+<h1>🍔 BIZZ KAB</h1>
 
 <div class="section">
-<h3>🥩 Go‘shtli</h3>
+<h2>🥩 Go‘shtli</h2>
 <div class="item"><span>Mini Non Kabob</span><span>26 000</span></div>
 <div class="item"><span>Oddiy Non Kabob</span><span>32 000</span></div>
 <div class="item"><span>Katta Non Kabob</span><span>38 000</span></div>
 </div>
 
 <div class="section">
-<h3>🍗 Tovuqli</h3>
+<h2>🍗 Tovuqli</h2>
 <div class="item"><span>Mini Non Kabob</span><span>17 000</span></div>
 <div class="item"><span>Oddiy Non Kabob</span><span>22 000</span></div>
 <div class="item"><span>Katta Non Kabob</span><span>28 000</span></div>
 </div>
 
 <div class="section">
-<h3>☕ Coffee</h3>
+<h2>☕ Coffee</h2>
 <div class="item"><span>Cappuccino</span><span>18 000</span></div>
 <div class="item"><span>Latte</span><span>20 000</span></div>
 <div class="item"><span>Espresso</span><span>22 000</span></div>
 </div>
 
+<a class="order-btn" href="tel:+998770050122">
+📞 BUYURTMA BERISH
+</a>
+
+<a class="order-btn" href="https://wa.me/998770050122">
+💬 WHATSAPP BUYURTMA
+</a>
+
 <div class="footer">
-📞 Dastafka nomer:  
-<div class="phone">77 005 01 22</div>
-<div class="phone">50 502 73 21</div>
+📞 77 005 01 22 <br>
+📞 50 502 73 21
 </div>
 
 </div>
