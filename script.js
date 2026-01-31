@@ -1,11 +1,11 @@
-let total = 0;
 let items = {};
+let total = 0;
 
 function plus(btn){
-  let item = btn.closest(".item");
-  let name = item.dataset.name;
-  let price = Number(item.dataset.price);
-  let span = btn.parentElement.querySelector("span");
+  const item = btn.closest(".item");
+  const name = item.dataset.name;
+  const price = Number(item.dataset.price);
+  const span = btn.parentElement.querySelector("span");
 
   span.innerText = Number(span.innerText) + 1;
 
@@ -16,10 +16,10 @@ function plus(btn){
 }
 
 function minus(btn){
-  let item = btn.closest(".item");
-  let name = item.dataset.name;
-  let price = Number(item.dataset.price);
-  let span = btn.parentElement.querySelector("span");
+  const item = btn.closest(".item");
+  const name = item.dataset.name;
+  const price = Number(item.dataset.price);
+  const span = btn.parentElement.querySelector("span");
 
   if(Number(span.innerText) === 0) return;
 
@@ -50,7 +50,7 @@ function order(){
     return;
   }
 
-  let msg = "🍔 BIZZKAB BUYURTMA\n\n";
+  let msg = "🍽 BIZZKAB BUYURTMA\n\n";
 
   for(let k in items){
     msg += ${k} x${items[k].qty} = ${items[k].qty * items[k].price} so‘m\n;
@@ -58,9 +58,10 @@ function order(){
 
   msg += \nJAMI: ${total} so‘m;
 
-  let phone = "998770050122";
+  const phone = "998770050122";
 
   window.open(
-    "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg)
+    "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg),
+    "_blank"
   );
 }
