@@ -6,7 +6,6 @@
 <title>BIZZKAB</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="header">
@@ -14,24 +13,137 @@
   <p>Dostavka: 77 005 01 22</p>
 </div>
 
-<h2 class="title">🌭 HOT DOG</h2>
+<h2 class="cat">🌭 HOT DOG</h2>
 
-<div class="item">
+<div class="item" data-name="Salatli hotdog" data-price="10000">
   <div>
     <h3>Salatli hotdog</h3>
     <p>Non, sosiska, salat, ketchup</p>
     <b>10 000 so‘m</b>
   </div>
-  <button onclick="add('Salatli hotdog',10000)">+</button>
+  <div class="qty">
+    <button onclick="minus(this)">−</button>
+    <span>0</span>
+    <button onclick="plus(this)">+</button>
+  </div>
 </div>
 
-<div class="item">
+<div class="item" data-name="Qazili hotdog" data-price="16000">
   <div>
     <h3>Qazili hotdog</h3>
     <p>Sosiska, sir, qazi, sous</p>
     <b>16 000 so‘m</b>
   </div>
-  <button onclick="add('Qazili hotdog',16000)">+</button>
+  <div class="qty">
+    <button onclick="minus(this)">−</button>
+    <span>0</span>
+    <button onclick="plus(this)">+</button>
+  </div>
+</div>
+
+<h2 class="cat">🥩 GO‘SHTLI</h2>
+
+<div class="item" data-name="Mini Non Kabob" data-price="26000">
+  <div>
+    <h3>Mini Non Kabob</h3>
+    <b>26 000 so‘m</b>
+  </div>
+  <div class="qty">
+    <button onclick="minus(this)">−</button>
+    <span>0</span>
+    <button onclick="plus(this)">+</button>
+  </div>
+</div>
+
+<div class="item" data-name="Oddiy Non Kabob" data-price="32000">
+  <div>
+    <h3>Oddiy Non Kabob</h3>
+    <b>32 000 so‘m</b>
+  </div>
+  <div class="qty">
+    <button onclick="minus(this)">−</button>
+    <span>0</span>
+    <button onclick="plus(this)">+</button>
+  </div>
+</div>
+
+<div class="item" data-name="Katta Non Kabob" data-price="38000">
+  <div>
+    <h3>Katta Non Kabob</h3>
+    <b>38 000 so‘m</b>
+  </div>
+  <div class="qty">
+    <button onclick="minus(this)">−</button>
+    <span>0</span>
+    <button onclick="plus(this)">+</button>
+  </div>
+</div>
+
+<h2 class="cat">🍗 TOVUQLI</h2>
+
+<div class="item" data-name="Mini Non Kabob (tovuq)" data-price="17000">
+  <div>
+    <h3>Mini Non Kabob</h3>
+    <b>17 000 so‘m</b>
+  </div>
+  <div class="qty">
+    <button onclick="minus(this)">−</button>
+    <span>0</span>
+    <button onclick="plus(this)">+</button>
+  </div>
+</div>
+
+<div class="item" data-name="Oddiy Non Kabob (tovuq)" data-price="22000">
+  <div>
+    <h3>Oddiy Non Kabob</h3>
+    <b>22 000 so‘m</b>
+  </div>
+  <div class="qty">
+    <button onclick="minus(this)">−</button>
+    <span>0</span>
+    <button onclick="plus(this)">+</button>
+  </div>
+</div>
+
+<div class="item" data-name="Katta Non Kabob (tovuq)" data-price="28000">
+  <div>
+    <h3>Katta Non Kabob</h3>
+    <b>28 000 so‘m</b>
+  </div>
+  <div class="qty">
+    <button onclick="minus(this)">−</button>
+    <span>0</span>
+    <button onclick="plus(this)">+</button>
+  </div>
+</div>
+
+<h2 class="cat">☕ COFFEE</h2>
+
+<div class="item" data-name="Cappuccino" data-price="18000">
+  <div><h3>Cappuccino</h3><b>18 000 so‘m</b></div>
+  <div class="qty">
+    <button onclick="minus(this)">−</button>
+    <span>0</span>
+    <button onclick="plus(this)">+</button>
+  </div>
+</div>
+
+<div class="item" data-name="Latte" data-price="20000">
+  <div><h3>Latte</h3><b>20 000 so‘m</b></div>
+  <div class="qty">
+    <button onclick="minus(this)">−</button>
+    <span>0</span>
+    <button onclick="plus(this)">+</button>
+  </div>
+</div>
+
+<div class="item" data-name="Espresso" data-price="22000">
+  <div><h3>Espresso</h3><b>22 000 so‘m</b></div>
+  <div class="qty">
+    <button onclick="minus(this)">−</button>
+    <span>0</span>
+    <button onclick="plus(this)">+</button>
+  </div>
 </div>
 
 <div class="cart">
