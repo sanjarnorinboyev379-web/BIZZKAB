@@ -1,94 +1,92 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <title>BIZZKAB | Fast Food</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>BIZZKAB | Menu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #111;
-            color: white;
-            text-align: center;
-        }
-
-        header {
-            background: linear-gradient(90deg, #ff0000, #ffb300);
-            padding: 25px;
-            font-size: 32px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .hero {
-            padding: 40px 20px;
-        }
-
-        .hero h2 {
-            font-size: 26px;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            color: #ccc;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            background: red;
-            color: white;
-            padding: 15px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        .menu {
-            padding: 40px 20px;
-        }
-
-        .card {
-            background: #1c1c1c;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 15px auto;
-            max-width: 320px;
-        }
-
-        footer {
-            background: #000;
-            padding: 15px;
-            color: #888;
-            font-size: 14px;
-        }
-    </style>
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f5f5f5;
+}
+.container{
+    max-width:420px;
+    margin:auto;
+    background:#fff;
+    padding:20px;
+}
+.title{
+    text-align:center;
+    font-size:36px;
+    font-weight:bold;
+    color:#8b4a2f;
+}
+.section{
+    margin-top:25px;
+}
+.section h3{
+    background:#8b4a2f;
+    color:white;
+    padding:8px;
+    border-radius:6px;
+    font-size:18px;
+}
+.item{
+    display:flex;
+    justify-content:space-between;
+    padding:6px 0;
+    border-bottom:1px dashed #ccc;
+    font-size:15px;
+}
+.footer{
+    margin-top:30px;
+    text-align:center;
+    font-size:14px;
+    color:#333;
+}
+.phone{
+    font-weight:bold;
+    margin-top:5px;
+}
+</style>
 </head>
 
 <body>
 
-<header>BIZZKAB</header>
+<div class="container">
 
-<div class="hero">
-    <h2>🔥 Eng mazali fast food</h2>
-    <p>Tez • Mazali • Arzon</p>
-    <a class="btn" href="#">🍔 Buyurtma berish</a>
+<div class="title">BIZZ KAB</div>
+
+<div class="section">
+<h3>🥩 Go‘shtli</h3>
+<div class="item"><span>Mini Non Kabob</span><span>26 000</span></div>
+<div class="item"><span>Oddiy Non Kabob</span><span>32 000</span></div>
+<div class="item"><span>Katta Non Kabob</span><span>38 000</span></div>
 </div>
 
-<div class="menu">
-    <h2>🍟 Menu</h2>
-
-    <div class="card">🍔 Burger — 25 000 so‘m</div>
-    <div class="card">🌭 Hot-dog — 18 000 so‘m</div>
-    <div class="card">🍕 Pizza — 45 000 so‘m</div>
-    <div class="card">🥤 Cola — 8 000 so‘m</div>
+<div class="section">
+<h3>🍗 Tovuqli</h3>
+<div class="item"><span>Mini Non Kabob</span><span>17 000</span></div>
+<div class="item"><span>Oddiy Non Kabob</span><span>22 000</span></div>
+<div class="item"><span>Katta Non Kabob</span><span>28 000</span></div>
 </div>
 
-<footer>
-    © 2026 BIZZKAB Fast Food
-</footer>
+<div class="section">
+<h3>☕ Coffee</h3>
+<div class="item"><span>Cappuccino</span><span>18 000</span></div>
+<div class="item"><span>Latte</span><span>20 000</span></div>
+<div class="item"><span>Espresso</span><span>22 000</span></div>
+</div>
+
+<div class="footer">
+📞 Dastafka nomer:  
+<div class="phone">77 005 01 22</div>
+<div class="phone">50 502 73 21</div>
+</div>
+
+</div>
 
 </body>
 </html>
