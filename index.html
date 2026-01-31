@@ -2,15 +2,93 @@
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
-    <title>BIZZKAB</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BIZZKAB | Fast Food</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            background: linear-gradient(90deg, #ff0000, #ffb300);
+            padding: 25px;
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .hero {
+            padding: 40px 20px;
+        }
+
+        .hero h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: red;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .menu {
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: #1c1c1c;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px auto;
+            max-width: 320px;
+        }
+
+        footer {
+            background: #000;
+            padding: 15px;
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>BIZZKAB</h1>
-<p>Fast food menu</p>
+<header>BIZZKAB</header>
 
-<button>Buyurtma berish</button>
+<div class="hero">
+    <h2>🔥 Eng mazali fast food</h2>
+    <p>Tez • Mazali • Arzon</p>
+    <a class="btn" href="#">🍔 Buyurtma berish</a>
+</div>
+
+<div class="menu">
+    <h2>🍟 Menu</h2>
+
+    <div class="card">🍔 Burger — 25 000 so‘m</div>
+    <div class="card">🌭 Hot-dog — 18 000 so‘m</div>
+    <div class="card">🍕 Pizza — 45 000 so‘m</div>
+    <div class="card">🥤 Cola — 8 000 so‘m</div>
+</div>
+
+<footer>
+    © 2026 BIZZKAB Fast Food
+</footer>
 
 </body>
 </html>
