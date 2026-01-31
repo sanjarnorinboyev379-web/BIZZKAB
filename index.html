@@ -13,102 +13,109 @@ body{
     color:#ffd700;
 }
 
-.container{
-    max-width:500px;
-    margin:auto;
+.header{
     padding:15px;
-}
-
-h1{
     text-align:center;
-    color:#ffd700;
-    margin-bottom:20px;
+    font-size:26px;
+    font-weight:bold;
 }
 
-.section{
+.tabs{
+    display:flex;
+    gap:10px;
+    padding:10px;
+    overflow-x:auto;
+}
+
+.tab{
     background:#8b0000;
-    border-radius:12px;
-    padding:12px;
-    margin-bottom:18px;
+    color:#ffd700;
+    padding:8px 18px;
+    border-radius:20px;
+    white-space:nowrap;
+    cursor:pointer;
 }
 
-.section h2{
+.tab.active{
     background:#ffd700;
     color:#b30000;
-    padding:8px;
-    border-radius:8px;
-    font-size:20px;
 }
 
-.item{
+.menu{
+    padding:10px;
+}
+
+.card{
     display:flex;
-    justify-content:space-between;
-    padding:6px 0;
-    border-bottom:1px dashed #ffd700;
+    background:#8b0000;
+    border-radius:15px;
+    margin-bottom:15px;
+    padding:10px;
+    align-items:center;
 }
 
-.order-btn{
-    display:block;
-    text-align:center;
-    background:linear-gradient(45deg,#ffd700,#ff9900);
-    color:#b30000;
-    font-size:22px;
+.card img{
+    width:80px;
+    height:80px;
+    border-radius:12px;
+    object-fit:cover;
+    margin-right:10px;
+}
+
+.card h3{
+    margin:0;
+    color:#ffd700;
+}
+
+.card p{
+    margin:5px 0;
+    font-size:13px;
+    color:#ffe066;
+}
+
+.price{
     font-weight:bold;
-    padding:18px;
-    border-radius:50px;
-    text-decoration:none;
-    margin:25px 0;
+    margin-top:5px;
 }
 
-.order-btn:hover{
-    opacity:0.9;
-}
-
-.footer{
-    text-align:center;
-    font-size:15px;
+.plus{
+    margin-left:auto;
+    font-size:28px;
+    color:#ffd700;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="header">🍔 BIZZKAB</div>
 
-<h1>🍔 BIZZ KAB</h1>
-
-<div class="section">
-<h2>🥩 Go‘shtli</h2>
-<div class="item"><span>Mini Non Kabob</span><span>26 000</span></div>
-<div class="item"><span>Oddiy Non Kabob</span><span>32 000</span></div>
-<div class="item"><span>Katta Non Kabob</span><span>38 000</span></div>
+<div class="tabs">
+    <div class="tab active">Hot Dog</div>
+    <div class="tab">Burger</div>
+    <div class="tab">Ichimlik</div>
 </div>
 
-<div class="section">
-<h2>🍗 Tovuqli</h2>
-<div class="item"><span>Mini Non Kabob</span><span>17 000</span></div>
-<div class="item"><span>Oddiy Non Kabob</span><span>22 000</span></div>
-<div class="item"><span>Katta Non Kabob</span><span>28 000</span></div>
+<div class="menu">
+
+<div class="card">
+    <img src="https://i.imgur.com/0umadnY.png">
+    <div>
+        <h3>Salatli hotdog</h3>
+        <p>Sosiska, bodring, pomidor, ketchup</p>
+        <div class="price">10 000 so‘m</div>
+    </div>
+    <div class="plus">+</div>
 </div>
 
-<div class="section">
-<h2>☕ Coffee</h2>
-<div class="item"><span>Cappuccino</span><span>18 000</span></div>
-<div class="item"><span>Latte</span><span>20 000</span></div>
-<div class="item"><span>Espresso</span><span>22 000</span></div>
-</div>
-
-<a class="order-btn" href="tel:+998770050122">
-📞 BUYURTMA BERISH
-</a>
-
-<a class="order-btn" href="https://wa.me/998770050122">
-💬 WHATSAPP BUYURTMA
-</a>
-
-<div class="footer">
-📞 77 005 01 22 <br>
-📞 50 502 73 21
+<div class="card">
+    <img src="https://i.imgur.com/ax5QG5L.png">
+    <div>
+        <h3>Qazili hotdog</h3>
+        <p>Qazi, sosiska, sir, sous</p>
+        <div class="price">16 000 so‘m</div>
+    </div>
+    <div class="plus">+</div>
 </div>
 
 </div>
