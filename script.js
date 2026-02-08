@@ -1,67 +1,96 @@
-let items = {};
-let total = 0;
+let totalCount = 0;
+let totalPrice = 0;
 
-function plus(btn){
+function plus(btn) {
   const item = btn.closest(".item");
-  const name = item.dataset.name;
-  const price = Number(item.dataset.price);
-  const span = btn.parentElement.querySelector("span");
+  const price = parseInt(item.dataset.price);
+  const span = item.querySelector("span");
 
-  span.innerText = Number(span.innerText) + 1;
+  let count = parseInt(span.innerText);
+  count++;
+  span.innerText = count;
 
-  if(!items[name]) items[name] = {qty:0, price:price};
-  items[name].qty++;
+  totalCount++;
+  totalPrice += price;
 
-  calc();
+  updateCart();
 }
 
-function minus(btn){
+function minus(btn) {
   const item = btn.closest(".item");
-  const name = item.dataset.name;
-  const price = Number(item.dataset.price);
-  const span = btn.parentElement.querySelector("span");
+  const price = parseInt(item.dataset.price);
+  const span = item.querySelector("span");
 
-  if(Number(span.innerText) === 0) return;
+  let count = parseInt(span.innerText);
+  if (count > 0) {
+    count--;
+    span.innerText = count;
 
-  span.innerText = Number(span.innerText) - 1;
-  items[name].qty--;
+    totalCount--;
+    totalPrice -= price;
 
-  if(items[name].qty <= 0) delete items[name];
-
-  calc();
-}
-
-function calc(){
-  let count = 0;
-  total = 0;
-
-  for(let k in items){
-    count += items[k].qty;
-    total += items[k].qty * items[k].price;
+    updateCart();
   }
-
-  document.getElementById("count").innerText = count;
-  document.getElementById("total").innerText = total;
 }
 
-function order(){
-  if(total === 0){
-    alert("Avval mahsulot tanlang!");
+function updateCart() {
+  document.getElementById("count").innerText = totalCount;
+  document.getElementById("total").innerText = totalPrice;
+}
+
+function order() {
+  const phone = document.getElementById("phone").value;
+  const address = document.getElementById("address").value;
+
+  if (totalCount === 0) {
+    alert("Avval buyurtma tanlang!");
     return;
   }
 
-  let msg = "🍽 BIZZKAB BUYURTMA\n\n";
-
-  for(let k in items){
-    msg += ${k} x${items[k].qty} = ${items[k].qty * items[k].price} so‘m\n;
+  if (!phone || !address) {
+    alert("Telefon va manzilni kiriting!");
+    return;
   }
 
-  msg += \nJAMI: ${total} so‘m;
+  let text = "🛒 Yangi buyurtma:\n\n";
 
-  const phone = "998770050122";
+  document.querySelectorAll(".item").forEach(item => {
+    const name = item.dataset.name;
+    const count = parseInt(item.querySelector("span").innerText);
+    const price = parseInt(item.dataset.price);
 
-  window.open(
-    "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg),
-    "_blank"
-  );
+    if (count > 0) {
+      text += `• ${name} x${count} = ${count * price} so‘m\n`;
+    }
+  });
+
+  text += `\n📞 Telefon: ${phone}`;
+  text += `\n📍 Manzil: ${address}`;
+  text += `\n\n💰 Jami: ${totalPrice} so‘m`;
+
+  sendToTelegram(text);
+}
+
+function sendToTelegram(message) {
+  const BOT_TOKEN = "SENING_BOT_TOKENING";
+  const CHAT_ID = "SENING_CHAT_IDING";
+
+  const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+  fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      chat_id: CHAT_ID,
+      text: message
+    })
+  })
+  .then(() => {
+    alert("Buyurtma yuborildi ✅");
+  })
+  .catch(() => {
+    alert("Xatolik! Telegramga yuborilmadi ❌");
+  });
 }
