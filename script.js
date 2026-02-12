@@ -93,4 +93,4 @@ function sendToTelegram(message) {
       console.error(err);
       alert("Xatolik! So‘rov yuborilmadi ❌");
     });
-}
+}  // 👈 MANA SHU YOPILISH YO‘Q EDI
