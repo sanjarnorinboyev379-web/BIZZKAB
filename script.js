@@ -78,7 +78,7 @@ function sendToTelegram(message) {
   const BOT_TOKEN = "8331617188:AAHD-kctgyct9CvgsnFDawcR0S9y9teXLXg";
   const CHAT_ID = "8331617188";
 
-  const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+  const url = `https://api.telegram.org/bot${8331617188:AAHD-kctgyct9CvgsnFDawcR0S9y9teXLXg}/sendMessage`;
 
   fetch(url, {
     method: "POST",
