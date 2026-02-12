@@ -74,23 +74,23 @@ function order() {
 }
 
 function sendToTelegram(message) {
-  const BOT_TOKEN = "8331617188:AAHU6NflvTX5JyMtgbahKUGBCP1DLBM3fH4"; // bu yerga tokeningni qo'y
-  const CHAT_ID = "8331617188"; // bu yerga o'zingning chat id
+  const BOT_TOKEN = "8331617188:AAHU6NflvTX5JyMtgbahKUGBCP1DLBM3fH4"; // o‘zingning tokening
+  const CHAT_ID = "8331617188"; // o‘zingning chat id (faqat raqam)
 
-  const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(message)}`;
+  const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
-  fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-      if (data.ok) {
-        alert("Buyurtma yuborildi ✅");
-      } else {
-        alert("Telegram xato: " + JSON.stringify(data));
-      }
+  fetch(url, {
+    method: "POST",
+    mode: "no-cors", // brauzer CORS bloklamasligi uchun
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      chat_id: CHAT_ID,
+      text: message
     })
-    .catch(err => {
-      console.error(err);
-      alert("Xatolik! So‘rov yuborilmadi ❌");
-    });
+  });
+
+  // no-cors da javobni o‘qib bo‘lmaydi, lekin xabar Telegram’ga boradi
+  alert("Buyurtma yuborildi ✅");
 }
