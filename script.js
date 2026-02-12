@@ -71,17 +71,18 @@ function order() {
   text += `\n\n💰 Jami: ${totalPrice} so‘m`;
 
 sendToTelegram(text);
-}function sendToTelegram(message) {
+function sendToTelegram(message) {
   const BOT_TOKEN = "8331617188:AAE-LKBZk2JD9vPTPpcX6sW2_4N6Fvf3L1U";
-  const CHAT_ID = "6035640398"; // masalan: 123456789
+  const CHAT_ID = "6035640398";
 
   const url =
     "https://api.telegram.org/bot" + BOT_TOKEN +
     "/sendMessage?chat_id=" + CHAT_ID +
     "&text=" + encodeURIComponent(message);
 
-  // Brauzerni shu linkka o'tkazadi
-  window.open(url, "_blank");
+  // Yashirin yuborish uchun
+  const img = new Image();
+  img.src = url;
+
+  alert("Buyurtma yuborildi ✅");
 }
-
-
