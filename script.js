@@ -74,16 +74,18 @@ function order() {
 }
 
 function sendToTelegram(message) {
-  const BOT_TOKEN = 8331617188:AAHD-kctgyct9CvgsnFDawcR0S9y9teXLXg;
-  const CHAT_ID = "8331617188";
+  // 🔴 SHU YERGA O'ZINGNING MA'LUMOTLARINGNI QO'Y
+  const BOT_TOKEN = "8331617188:AAHD-kctgyct9CvgsnFDawcR0S9y9teXLXg";   // masalan: "123456:ABC-DEF..."
+  const CHAT_ID = "8331617188";    // masalan: "8331617188"
 
   const url = `https://api.telegram.org/bot${8331617188:AAHD-kctgyct9CvgsnFDawcR0S9y9teXLXg}/sendMessage`;
+
 
   fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      chat_id: CHAT_ID,
+      chat_id: 8331617188,
       text: message
     })
   })
@@ -96,4 +98,5 @@ function sendToTelegram(message) {
     alert("Xatolik! Telegramga yuborilmadi ❌");
   });
 }
+
 
