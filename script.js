@@ -74,10 +74,10 @@ function order() {
 }
 
 function sendToTelegram(message) {
-  const BOT_TOKEN = "SENING_BOT_TOKENING";
-  const CHAT_ID = "SENING_CHAT_IDING";
+  const BOT_TOKEN = 8331617188:AAHD-kctgyct9CvgsnFDawcR0S9y9teXLXg;
+  const CHAT_ID = "8331617188";
 
-  const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+  const url = `https://api.telegram.org/bot${8331617188:AAHD-kctgyct9CvgsnFDawcR0S9y9teXLXg}/sendMessage`;
 
   fetch(url, {
     method: "POST",
@@ -87,6 +87,13 @@ function sendToTelegram(message) {
       text: message
     })
   })
-  .then(() => alert("Buyurtma yuborildi ✅"))
-  .catch(() => alert("Xatolik! Telegramga yuborilmadi ❌"));
+  .then(res => {
+    if (!res.ok) throw new Error("Telegram error");
+    alert("Buyurtma yuborildi ✅");
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Xatolik! Telegramga yuborilmadi ❌");
+  });
 }
+
