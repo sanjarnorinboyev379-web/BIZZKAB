@@ -74,9 +74,8 @@ function order() {
 }
 
 function sendToTelegram(message) {
-  // ⚠️ Token va Chat ID ni tekshir
-  const BOT_TOKEN = "8331617188:AAHU6NlfvTX5JyMtgbaHKUGBCP1DLBM3fH4"; // to‘liq token
-  const CHAT_ID = "8331617188"; // faqat raqam, oxirida ":" bo‘lmasin
+  const BOT_TOKEN = "8331617188:AAHU6NlfvTX5JyMtgbaHKUGBCP1DLBM3fH4"; // o‘zingniki
+  const CHAT_ID = "8331617188"; // faqat raqam
 
   const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(message)}`;
 
@@ -95,7 +94,3 @@ function sendToTelegram(message) {
       alert("Xatolik! So‘rov yuborilmadi ❌");
     });
 }
-
-
-
-
