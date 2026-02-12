@@ -70,29 +70,18 @@ function order() {
   text += `\n📍 Manzil: ${address}`;
   text += `\n\n💰 Jami: ${totalPrice} so‘m`;
 
-  sendToTelegram(text);
-}
-
-function sendToTelegram(message) {
+sendToTelegram(text);
+}function sendToTelegram(message) {
   const BOT_TOKEN = "8331617188:AAE-LKBZk2JD9vPTPpcX6sW2_4N6Fvf3L1U";
-  const CHAT_ID = "8331617188";
+  const CHAT_ID = "6035640398"; // masalan: 123456789
 
-  const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+  const url =
+    "https://api.telegram.org/bot" + BOT_TOKEN +
+    "/sendMessage?chat_id=" + CHAT_ID +
+    "&text=" + encodeURIComponent(message);
 
-  fetch(url, {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      chat_id: CHAT_ID,
-      text: message
-    })
-  });
-
-  // Javobni o‘qimaymiz, shunchaki yuborildi deymiz
-  alert("Buyurtma yuborildi ✅");
+  // Brauzerni shu linkka o'tkazadi
+  window.open(url, "_blank");
 }
 
 
