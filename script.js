@@ -75,17 +75,16 @@ function order() {
 
 function sendToTelegram(message) {
   // 🔴 SHU YERGA O'ZINGNING MA'LUMOTLARINGNI QO'Y
-  const BOT_TOKEN = "8331617188:AAHD-kctgyct9CvgsnFDawcR0S9y9teXLXg";   // masalan: "123456:ABC-DEF..."
-  const CHAT_ID = "8331617188";    // masalan: "8331617188"
+  const BOT_TOKEN = "AAHD-kctgyct9CvgsnFDawcR0S9y9teXLXg";  // "123456:ABCDEF..."
+  const CHAT_ID = "8331617188";
 
-  const url = `https://api.telegram.org/bot${8331617188:AAHD-kctgyct9CvgsnFDawcR0S9y9teXLXg}/sendMessage`;
-
+  const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
   fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      chat_id: 8331617188,
+      chat_id: CHAT_ID,
       text: message
     })
   })
