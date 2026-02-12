@@ -1,39 +1,38 @@
-let totalCount = 0;
-let totalPrice = 0;
-
 function plus(btn) {
   const item = btn.closest(".item");
-  const price = parseInt(item.dataset.price);
   const span = item.querySelector("span");
 
   let count = parseInt(span.innerText);
   count++;
   span.innerText = count;
 
-  totalCount++;
-  totalPrice += price;
-
   updateCart();
 }
 
 function minus(btn) {
   const item = btn.closest(".item");
-  const price = parseInt(item.dataset.price);
   const span = item.querySelector("span");
 
   let count = parseInt(span.innerText);
   if (count > 0) {
     count--;
     span.innerText = count;
-
-    totalCount--;
-    totalPrice -= price;
-
     updateCart();
   }
 }
 
 function updateCart() {
+  let totalCount = 0;
+  let totalPrice = 0;
+
+  document.querySelectorAll(".item").forEach(item => {
+    const price = parseInt(item.dataset.price);
+    const count = parseInt(item.querySelector("span").innerText);
+
+    totalCount += count;
+    totalPrice += count * price;
+  });
+
   document.getElementById("count").innerText = totalCount;
   document.getElementById("total").innerText = totalPrice;
 }
@@ -41,6 +40,9 @@ function updateCart() {
 function order() {
   const phone = document.getElementById("phone").value;
   const address = document.getElementById("address").value;
+
+  const totalCount = parseInt(document.getElementById("count").innerText);
+  const totalPrice = parseInt(document.getElementById("total").innerText);
 
   if (totalCount === 0) {
     alert("Avval buyurtma tanlang!");
@@ -79,18 +81,12 @@ function sendToTelegram(message) {
 
   fetch(url, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       chat_id: CHAT_ID,
       text: message
     })
   })
-  .then(() => {
-    alert("Buyurtma yuborildi ✅");
-  })
-  .catch(() => {
-    alert("Xatolik! Telegramga yuborilmadi ❌");
-  });
+  .then(() => alert("Buyurtma yuborildi ✅"))
+  .catch(() => alert("Xatolik! Telegramga yuborilmadi ❌"));
 }
