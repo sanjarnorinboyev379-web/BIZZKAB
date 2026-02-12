@@ -80,19 +80,28 @@ function sendToTelegram(message) {
 
 const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
-  fetch(url, {
-    method: "POST",
-    mode: "no-cors", // 👈 brauzer CORS bloklamasligi uchun (test uchun)
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chat_id: CHAT_ID,
-      text: message
-    })
-  });
+function sendToTelegram(message) {
+  const BOT_TOKEN = "8331617188:AAHU6NlfvTX5JyMtgbaHKUGBCP1DLBM3fH4";
+  const CHAT_ID = "8331617188";
 
-  // no-cors da javobni o‘qib bo‘lmaydi, shuning uchun shunchaki muvaffaqiyat deb ko‘rsatamiz
-  alert("Buyurtma yuborildi ✅ (token/chat_id to‘g‘ri bo‘lsa, Telegramga boradi)");
+  const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(message)}`;
+
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      if (data.ok) {
+        alert("Buyurtma yuborildi ✅");
+      } else {
+        alert("Telegram xato: " + JSON.stringify(data));
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Xatolik! So‘rov yuborilmadi ❌");
+    });
 }
+
 
   
 
