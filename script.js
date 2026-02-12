@@ -77,7 +77,8 @@ function sendToTelegram(message) {
   const BOT_TOKEN = "8331617188:AAHU6NflvTX5JyMtgbahKUGBCP1DLBM3fH4"; // o‘zingniki
   const CHAT_ID = "8331617188"; // faqat raqam
 
-  const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(message)}`;
+const url = `https://api.telegram.org/bot${8331617188:AAHU6NflvTX5JyMtgbahKUGBCP1DLBM3fH4}/sendMessage?chat_id=${8331617188}&text=${encodeURIComponent(message)}`;
+
 
   fetch(url)
     .then(res => res.json())
