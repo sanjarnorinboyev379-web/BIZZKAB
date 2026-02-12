@@ -93,7 +93,10 @@
 <h2 class="cat">☕ COFFEE</h2>
 
 <div class="item" data-name="Cappuccino" data-price="18000">
-  <div><h3>Cappuccino</h3><b>18 000 so‘m</b></div>
+  <div>
+    <h3>Cappuccino</h3>
+    <b>18 000 so‘m</b>
+  </div>
   <div class="qty">
     <button onclick="minus(this)">−</button>
     <span>0</span>
@@ -102,7 +105,10 @@
 </div>
 
 <div class="item" data-name="Latte" data-price="20000">
-  <div><h3>Latte</h3><b>20 000 so‘m</b></div>
+  <div>
+    <h3>Latte</h3>
+    <b>20 000 so‘m</b>
+  </div>
   <div class="qty">
     <button onclick="minus(this)">−</button>
     <span>0</span>
@@ -111,7 +117,10 @@
 </div>
 
 <div class="item" data-name="Espresso" data-price="22000">
-  <div><h3>Espresso</h3><b>22 000 so‘m</b></div>
+  <div>
+    <h3>Espresso</h3>
+    <b>22 000 so‘m</b>
+  </div>
   <div class="qty">
     <button onclick="minus(this)">−</button>
     <span>0</span>
@@ -129,125 +138,4 @@
 <script src="script.js"></script>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bizzkab</title>
 
-<style>
-body {
-    margin: 0;
-    background: red;
-    font-family: Arial;
-    color: yellow;
-}
-
-.card {
-    background: #8b0000;
-    margin: 15px;
-    padding: 20px;
-    border-radius: 20px;
-    position: relative;
-}
-
-.btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 28px;
-    border: none;
-    background: yellow;
-    color: red;
-    font-weight: bold;
-}
-
-.controls {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    text-align: center;
-}
-
-.cart {
-    background: yellow;
-    color: red;
-    padding: 15px;
-    font-weight: bold;
-    position: fixed;
-    bottom: 70px;
-    width: 100%;
-    text-align: center;
-}
-
-.order {
-    background: orange;
-    color: blue;
-    font-size: 22px;
-    font-weight: bold;
-    padding: 15px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border: none;
-}
-</style>
-</head>
-
-<body>
-
-<h1 style="text-align:center;">BIZZKAB</h1>
-
-<div class="card">
-    <h2>Mini Non Kabob</h2>
-    <p>26 000 so‘m</p>
-
-    <div class="controls">
-        <button class="btn" onclick="minus()">−</button>
-        <div id="count">0</div>
-        <button class="btn" onclick="plus()">+</button>
-    </div>
-</div>
-
-<div class="cart" id="cart">
-    Savat: 0 ta | Jami: 0 so‘m
-</div>
-
-<button class="order" onclick="order()">
-    📦 BUYURTMA BERISH
-</button>
-
-<script>
-let count = 0;
-let price = 26000;
-
-function plus() {
-    count++;
-    update();
-}
-
-function minus() {
-    if (count > 0) {
-        count--;
-        update();
-    }
-}
-
-function update() {
-    document.getElementById("count").innerText = count;
-    document.getElementById("cart").innerText =
-        "Savat: " + count + " ta | Jami: " + (count * price) + " so‘m";
-}
-
-function order() {
-    if (count === 0) {
-        alert("Avval buyurtma tanlang!");
-    } else {
-        alert("Buyurtma qabul qilindi ✅");
-    }
-}
-</script>
-
-</body>
-</html>
