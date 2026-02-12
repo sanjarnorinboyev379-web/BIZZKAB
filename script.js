@@ -74,11 +74,10 @@ function order() {
 }
 
 function sendToTelegram(message) {
-  const BOT_TOKEN = "8331617188:AAHU6NflvTX5JyMtgbahKUGBCP1DLBM3fH4"; // o‘zingniki
-  const CHAT_ID = "8331617188"; // faqat raqam
+  const BOT_TOKEN = "8331617188:AAHU6NflvTX5JyMtgbahKUGBCP1DLBM3fH4"; // bu yerga tokeningni qo'y
+  const CHAT_ID = "8331617188"; // bu yerga o'zingning chat id
 
-const url = `https://api.telegram.org/bot${8331617188:AAHU6NflvTX5JyMtgbahKUGBCP1DLBM3fH4}/sendMessage?chat_id=${8331617188}&text=${encodeURIComponent(message)}`;
-
+  const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(message)}`;
 
   fetch(url)
     .then(res => res.json())
@@ -94,4 +93,4 @@ const url = `https://api.telegram.org/bot${8331617188:AAHU6NflvTX5JyMtgbahKUGBCP
       console.error(err);
       alert("Xatolik! So‘rov yuborilmadi ❌");
     });
-}  // 👈 MANA SHU YOPILISH YO‘Q EDI
+}
