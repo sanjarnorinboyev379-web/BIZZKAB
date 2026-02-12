@@ -70,17 +70,19 @@ function order() {
   text += `\n📍 Manzil: ${address}`;
   text += `\n\n💰 Jami: ${totalPrice} so‘m`;
 
-sendToTelegram(text);
+  sendToTelegram(text);
+}
+
 function sendToTelegram(message) {
-  const BOT_TOKEN = "8331617188:AAE-LKBZk2JD9vPTPpcX6sW2_4N6Fvf3L1U";
-  const CHAT_ID = "6035640398";
+  const BOT_TOKEN = "8331617188:AAH2sZIkHrx-WRDlkfwGAh0khz51Bf9JE3w"; // ESKISINI REVOKE QIL!
+  const CHAT_ID = "6035640398"; // bu sening USER ID bo‘lsin
 
   const url =
     "https://api.telegram.org/bot" + BOT_TOKEN +
     "/sendMessage?chat_id=" + CHAT_ID +
     "&text=" + encodeURIComponent(message);
 
-  // Yashirin yuborish uchun
+  // Sahifa ochilmasdan yuborish
   const img = new Image();
   img.src = url;
 
