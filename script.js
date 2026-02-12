@@ -74,15 +74,9 @@ function order() {
 }
 
 function sendToTelegram(message) {
-  // 🔴 BU YERGA YANGI, TO‘LIQ TOKENINGNI QO‘Y (masalan: "123456789:ABCDEF...")
-  const BOT_TOKEN = "8331617188:AAHU6NflvTX5JyMtgbahKUGBCP1DLBM3fH4";
-  const CHAT_ID = "8331617188:";
-
-const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-
-function sendToTelegram(message) {
-  const BOT_TOKEN = "8331617188:AAHU6NlfvTX5JyMtgbaHKUGBCP1DLBM3fH4";
-  const CHAT_ID = "8331617188";
+  // ⚠️ Token va Chat ID ni tekshir
+  const BOT_TOKEN = "8331617188:AAHU6NlfvTX5JyMtgbaHKUGBCP1DLBM3fH4"; // to‘liq token
+  const CHAT_ID = "8331617188"; // faqat raqam, oxirida ":" bo‘lmasin
 
   const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(message)}`;
 
@@ -102,8 +96,6 @@ function sendToTelegram(message) {
     });
 }
 
-
-  
 
 
 
