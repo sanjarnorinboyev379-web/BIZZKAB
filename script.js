@@ -95,3 +95,4 @@ function sendToTelegram(message) {
   alert("Buyurtma yuborildi ✅");
 }
 
+
