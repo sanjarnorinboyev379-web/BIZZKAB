@@ -74,14 +74,14 @@ function order() {
 }
 
 function sendToTelegram(message) {
-  const BOT_TOKEN = "8331617188:AAHU6NflvTX5JyMtgbahKUGBCP1DLBM3fH4"; // o‘zingning tokening
-  const CHAT_ID = "8331617188"; // o‘zingning chat id (faqat raqam)
+  const BOT_TOKEN = "8331617188:AAE-LKBZk2JD9vPTPpcX6sW2_4N6Fvf3L1U";
+  const CHAT_ID = "8331617188";
 
   const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
   fetch(url, {
     method: "POST",
-    mode: "no-cors", // brauzer CORS bloklamasligi uchun
+    mode: "no-cors",
     headers: {
       "Content-Type": "application/json"
     },
@@ -91,6 +91,7 @@ function sendToTelegram(message) {
     })
   });
 
-  // no-cors da javobni o‘qib bo‘lmaydi, lekin xabar Telegram’ga boradi
+  // Javobni o‘qimaymiz, shunchaki yuborildi deymiz
   alert("Buyurtma yuborildi ✅");
 }
+
