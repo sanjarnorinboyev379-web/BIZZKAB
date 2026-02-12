@@ -75,7 +75,7 @@ function order() {
 
 function sendToTelegram(message) {
   // 🔴 BU YERGA YANGI, TO‘LIQ TOKENINGNI QO‘Y (masalan: "123456789:ABCDEF...")
-  const BOT_TOKEN = "8331617188:AAHD-kctgyct9CvgsnFDawcR0S9y9teXLXg";
+  const BOT_TOKEN = "AAHD-kctgyct9CvgsnFDawcR0S9y9teXLXg";
   const CHAT_ID = "8331617188";
 
   const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
